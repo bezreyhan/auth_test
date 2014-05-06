@@ -1,0 +1,15 @@
+
+<table>
+  <th>Email</th>
+  <th>Salted PW</th>
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= user.email %></td>
+    <td><%= user.hashed_password %></td>
+  </tr>
+  <% end %> 
+</table>
+
+<% if current_user %> 
+  <%= button_to "Sign Out", auth_path(current_user.id), method: :delete %>
+<% end %> 

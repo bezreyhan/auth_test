@@ -1,0 +1,18 @@
+<%= flash[:notice] %> 
+<h1>Sign up</h1>
+<%= form_for @user do |u| %>
+  <div>
+    <%= u.label :email %>
+    <%= u.text_field :email %> 
+  </div> 
+  <div> 
+    <%= u.label :password %>
+    <%= u.password_field :password %>
+  </div>
+  <%= u.submit "Sign Up" %> 
+<% end %> 
+
+<button><%= link_to "Login", new_auth_path %> </button>
+
+
+
